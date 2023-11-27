@@ -1,0 +1,30 @@
+[package]
+name = "oci-compat-schema"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+chrono.workspace = true
+indexmap.workspace = true
+schemars.workspace = true
+semver.workspace = true
+serde.workspace = true
+url.workspace = true
+uuid.workspace = true
+
+[workspace]
+members = ["schema-gen"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+chrono = { version = "0.4.31", features = ["serde"] }
+indexmap = { version = "2.1.0", features = ["serde"] }
+schemars = { version = "0.8.16", features = ["chrono", "indexmap2", "uuid1", "url", "semver"] }
+semver = { version = "1.0.20", features = ["serde"] }
+serde = { version = "1.0.193", features = ["derive"] }
+url = { version = "2.5.0", features = ["serde"] }
+uuid = { version = "1.6.1", features = ["serde", "v4"] }
+oci-compat-schema = { version = "*", path = "." }

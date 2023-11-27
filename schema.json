@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ZoneCompatMetadata",
+  "type": "object",
+  "required": [
+    "distribution",
+    "fork",
+    "libc_version"
+  ],
+  "properties": {
+    "distribution": {
+      "type": "string"
+    },
+    "fork": {
+      "type": "string"
+    },
+    "gate_src_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "libc_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    }
+  }
+}
